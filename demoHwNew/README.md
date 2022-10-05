@@ -33,6 +33,20 @@ METHOD / URL / REQUEST / RESPONSE
 "password": "1234"
 }
 
+"GET" | /api/posts/{id} | id
+{
+"createdAt": "2022-10-05T13:55:34.513691",
+"modifiedAt": "2022-10-05T13:55:34.513691",
+"id": 1,
+"name": "adam",
+"title": "title",
+"content": "testing content",
+"email": "adam@gmail.com",
+"password": "1234"
+}
+
+
+
 "PUT" | /api/posts/{id} | 
 {
 "name" : "changed name",
@@ -53,22 +67,4 @@ throws new error.
 returns id of the deleted post
 
 
-1. 수정, 삭제 API의 request를 어떤 방식으로 사용하셨나요? (param, query, body)
-    @RequstBody 에 id 를 넘겨줘서 했습니다. 
 
-2. 어떤 상황에 어떤 방식의 request를 써야하나요?
-    list 를 가져올떈 "GET"
-    수정 할땐 "PUT"
-    삭제 할떈 "DELETE"
-    생성 할땐 "POST"
-
-3. RESTful한 API를 설계했나요? 어떤 부분이 그런가요? 어떤 부분이 그렇지 않나요?
-    그런것 같습니다. api 를 보면 무슨 request 를 보내는지 알수있습니다.
-
-4. 적절한 관심사 분리를 적용하였나요? (Controller, Repository, Service)
-    네.
-
-5. 작성한 코드에서 빈(Bean)을 모두 찾아보세요!
-    Controller package * , Repository package * , Service package *
-
-6. API 명세서 작성 가이드라인을 검색하여 직접 작성한 명세서와 비교해보세요!
