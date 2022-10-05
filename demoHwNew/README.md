@@ -3,7 +3,7 @@ API Receipt
 METHOD / URL / REQUEST / RESPONSE
 
 
-"GET" | /api/posts | - |   
+"GET" | /posts | - |   
 
 {
 "createdAt": "2022-10-05T12:30:08.782367",
@@ -15,7 +15,7 @@ METHOD / URL / REQUEST / RESPONSE
 "password": "1234"
 }
 
-"POST" | /api/posts | 	
+"POST" | /posts | 	
 {
 "name" : "new post",
 "content" : "new content",
@@ -33,7 +33,7 @@ METHOD / URL / REQUEST / RESPONSE
 "password": "1234"
 }
 
-"GET" | /api/posts/{id} | id
+"GET" | /posts/{id} | id
 {
 "createdAt": "2022-10-05T13:55:34.513691",
 "modifiedAt": "2022-10-05T13:55:34.513691",
@@ -47,7 +47,7 @@ METHOD / URL / REQUEST / RESPONSE
 
 
 
-"PUT" | /api/posts/{id} | 
+"PUT" | /posts/{id} | 
 {
 "name" : "changed name",
 "content" : "changed content",
@@ -62,7 +62,7 @@ returns id of the changed post
 (if the password is incorrect) 
 throws new error.
 
-"DELETE" | /api/posts/{id} | id
+"DELETE" | /posts/{id} | id
 
 returns id of the deleted post
 
