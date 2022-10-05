@@ -9,8 +9,9 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Component
+@Service
 public class PostService {
-
+    @Autowired
     private final PostRepository postRepository;
 
     public PostService(PostRepository postRepository) {
@@ -25,8 +26,24 @@ public class PostService {
         post1.update(postDto);
         return post1.getId();
     }
+
     public Optional<Post> getById(Long id){
         return postRepository.findById(id);
     }
 
+    public List<Post> getAll() {
+        return postRepository.findAllByOrderByModifiedAtDesc();
+    }
+
+    public Post save(Post post){
+        if(post.getId()==null){
+            post.setCreatedAt(LocalDateTime.now());
+        }
+        post.setModifiedAt(LocalDateTime.now());
+        return postRepository.save(post);
+    }
+    public Long delete(@PathVariable Long id){
+        postRepository.deleteById(id);
+        return id;
+    };
 }
